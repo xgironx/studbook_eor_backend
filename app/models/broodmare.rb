@@ -1,0 +1,2 @@
+class Broodmare < ApplicationRecord
+end
