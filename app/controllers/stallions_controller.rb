@@ -46,6 +46,6 @@ class StallionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def stallion_params
-      params.require(:stallion).permit(:name, :age, :color, :registry_tattoo, :stud_fee, :stakes_winner_progeny, :img_url, :link_to_pedigree_url)
+      params.require(:stallion).permit(:name, :age, :color, :registry_tattoo, :link_to_pedigree_url, :img_url, :stud_fee, :stakes_winner_progeny)
     end
 end

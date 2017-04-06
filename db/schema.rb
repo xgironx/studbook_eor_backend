@@ -10,24 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405223415) do
+ActiveRecord::Schema.define(version: 20170405234716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "broodmares", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "age"
+    t.string   "color"
+    t.string   "registry_tattoo"
+    t.string   "link_to_pedigree_url"
+    t.string   "img_url"
+    t.integer  "stallion_id",           null: false
+    t.boolean  "barren"
+    t.integer  "num_foals"
+    t.boolean  "in_foal_now"
+    t.date     "expected_foaling_date"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["stallion_id"], name: "index_broodmares_on_stallion_id", using: :btree
   end
 
   create_table "foals", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "sex"
+    t.date     "foaling_date"
+    t.string   "color"
+    t.string   "markings"
+    t.string   "registry_tattoo"
+    t.string   "link_to_pedigree_url"
+    t.string   "img_url"
+    t.integer  "stallion_id"
+    t.string   "birthplace"
+    t.integer  "broodmare_id",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["broodmare_id"], name: "index_foals_on_broodmare_id", using: :btree
   end
 
   create_table "stallions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "age"
+    t.string   "color"
+    t.string   "registry_tattoo"
+    t.string   "link_to_pedigree_url"
+    t.string   "img_url"
+    t.decimal  "stud_fee"
+    t.integer  "stakes_winner_progeny"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end

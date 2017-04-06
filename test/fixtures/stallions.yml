@@ -5,17 +5,17 @@ one:
   age: 1
   color: MyString
   registry_tattoo: MyString
+  link_to_pedigree_url: MyString
+  img_url: MyString
   stud_fee: 9.99
   stakes_winner_progeny: 1
-  img_url: MyString
-  link_to_pedigree_url: MyString
 
 two:
   name: MyString
   age: 1
   color: MyString
   registry_tattoo: MyString
+  link_to_pedigree_url: MyString
+  img_url: MyString
   stud_fee: 9.99
   stakes_winner_progeny: 1
-  img_url: MyString
-  link_to_pedigree_url: MyString
